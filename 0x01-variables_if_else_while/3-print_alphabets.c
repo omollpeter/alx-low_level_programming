@@ -22,7 +22,7 @@ int main(void)
 		putchar(c);
 		c++;
 	}
-	
+
 	i = 91;
 	while (C < 91)
 	{
