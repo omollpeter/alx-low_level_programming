@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Program prints all lowercase alphabet characters
+ * Program prints lowercase alphabet characters but omit some
  *
  * Return: Always 0 (Success)
  */
@@ -12,13 +12,13 @@ int main(void)
 	char c;
 	int i;
 
-	c = 'a';
 	i = 123;
 
-	while (c < i)
+	for (c = 'a'; c < i; c++)
 	{
-		putchar((c == 101 || c == 113) ? '\0' : c);
-		c++;
+		if (c == 101 || c == 113)
+			continue;
+		putchar(c);
 	}
 	putchar('\n');
 
