@@ -11,7 +11,6 @@ int main(void)
 {
 	int digit;
 	char c;
-	int i;
 
 	digit = 48;
 	c = 'a';
