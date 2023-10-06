@@ -17,9 +17,11 @@ int main(void)
 	for (n = 48; n < i; n++)
 	{
 		putchar(n);
-		putchar((n == 57) ? ' ' : ',');
-		putchar((n == 57) ? '\n' : ' ');
+		if (n == 57)
+			continue;
+		putchar(',');
+		putchar(' ');
 	}
-
+	putchar('\n');
 	return (0);
 }
