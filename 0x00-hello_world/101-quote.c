@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
 /**
  * main - Entry point
@@ -10,8 +12,8 @@
  */
 int main(void)
 {
-	char msg[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	char *buff = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
-	fwrite(msg, 1, sizeof(msg), stderr);
+	write(2, buff, strlen(buff));
 	exit(1);
 }

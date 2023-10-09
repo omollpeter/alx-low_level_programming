@@ -9,21 +9,29 @@
  */
 int main(void)
 {
-	int n;
 	int i;
+	int j;
 
-	n = 48;
+	i = 0;
 
-	while (n < 58)
+	for (; i < 100; i++)
 	{
-		for (i = 48; i < 58; i++)
+		for (j = i ; j < 100; j++)
 		{
-			putchar(n);
-			putchar(i);
-			putchar(',');
-			putchar(' ');
+			if (j != i)
+			{
+				putchar(i / 10 + '0');
+				putchar(i % 10 + '0');
+				putchar(' ');
+				putchar(j / 10 + '0');
+				putchar(j % 10 + '0');
+
+				if (i == 98 && j == 99)
+					continue;
+				putchar(',');
+				putchar(' ');
+			}
 		}
-		n++;
 	}
 	putchar('\n');
 	return (0);
