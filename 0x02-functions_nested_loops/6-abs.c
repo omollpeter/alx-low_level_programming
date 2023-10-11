@@ -16,6 +16,6 @@ int _abs(int n)
 		abs = 0;
 	else if (n < 0)
 		abs = n / -1;
-	
+
 	return (abs);
 }
