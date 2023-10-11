@@ -7,27 +7,28 @@
  */
 int main(void)
 {
-	print_alphabet();
+	print_alphabet_x10();
 	return (0);
 }
 
 /**
- * print_alphabet - Prints all lowercase characters followed by newline
+ * print_alphabet_x10 - Prints all lowercase chars 10 times followed by newline
  *
  * Return: void always
  */
-void print_alphabet(void)
+void print_alphabet_x10(void)
 {
 	int i;
+	int j;
 
-	i = 97;
-
-	while (i < 123)
+	for (i = 0; i < 10; i++)
 	{
-		_putchar(i);
-		i++;
+		for (j = 97; j < 123; j++)
+		{
+			_putchar(j);
+		}
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
 
 /**
