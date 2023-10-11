@@ -2,6 +2,7 @@
 #define MAIN_HEADER
 
 	#include <unistd.h>
+	#include <limits.h>
 
 	/* Function prototypes */
 	int _putchar(char c);
