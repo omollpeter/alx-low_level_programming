@@ -24,6 +24,7 @@ int print_last_digit(int n)
 	{
 		n = (n / -1) / 10;
 		ld = n % 10;
+	}
 
 	return (ld);
 }
