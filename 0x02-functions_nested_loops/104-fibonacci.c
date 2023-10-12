@@ -20,9 +20,9 @@ int main(void)
  */
 void fibonacci_seq(int n)
 {
-	long int f1 = 1;
-	long int f2 = 2;
-	long int next = f1 + f2;
+	int f1 = 1;
+	int f2 = 2;
+	int next = f1 + f2;
 	int i;
 
 	if (n == 1)
