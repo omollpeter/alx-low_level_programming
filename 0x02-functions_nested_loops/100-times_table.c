@@ -28,9 +28,9 @@ void print_times_table(int n)
 					printf("%d", x);
 			}
 			else if (x >= 10 && x < 100)
-				printf("  %d", x);
+				printf(",  %d", x);
 			else if (x >= 100)
-				printf(" %d", x);
+				printf(", %d", x);
 		}
 		printf("\n");
 	}
