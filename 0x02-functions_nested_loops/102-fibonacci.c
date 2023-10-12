@@ -24,7 +24,6 @@ void fibonacci_seq(int n)
 	int f2 = 2;
 	int next = f1 + f2;
 	int i;
-	int fib;
 
 	if (n == 1)
 	{
