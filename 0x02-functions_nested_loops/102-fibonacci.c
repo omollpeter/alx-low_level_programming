@@ -23,12 +23,16 @@ int main(void)
  * fibonacci - Prints fibonacci number specified
  * @n: Integer specifying fibonacci position to print
  *
- * Return: Integer
+ * Return: Fibonacci number
  */
 int fibonacci(int n)
 {
+	int fib;
+
 	if (n < 2)
-		return (n);
+		fib = n;
 	else
-		return (fibonacci(n - 1) + fibonacci(n - 2));
+		fib = (fibonacci(n - 1) + fibonacci(n - 2));
+
+	return (fib);
 }
