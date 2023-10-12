@@ -13,8 +13,10 @@ int main(void)
 	while (fibonacci(i) <= 4000000)
 	{
 		if (fibonacci(i) % 2 == 0)
+		{
 			sum += fibonacci(i);
 			i++;
+		}
 	}
 	printf("%d\n", sum);
 
