@@ -20,25 +20,25 @@ int main(void)
  */
 void fibonacci_seq(int n)
 {
-	int f1 = 1;
-	int f2 = 2;
-	int next = f1 + f2;
+	unsigned long int f1 = 1;
+	unsigned long int f2 = 2;
+	unsigned long int next = f1 + f2;
 	int i;
 
 	if (n == 1)
 	{
-		printf("%d\n", f1);
+		printf("%lu\n", f1);
 	}
 	else if (n == 2)
 	{
-		printf("%d, %d\n", f1, f2);
+		printf("%lu, %lu\n", f1, f2);
 	}
 	else if (n > 2)
 	{
-		printf("%d, %d, ", f1, f2);
+		printf("%lu, %lu, ", f1, f2);
 		for (i = 3; i <= n; ++i)
 		{
-			printf("%d", next);
+			printf("%lu", next);
 
 			f1 = f2;
 			f2 = next;
