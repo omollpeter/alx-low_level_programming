@@ -27,18 +27,18 @@ void fibonacci_seq(int n)
 
 	if (n == 1)
 	{
-		printf("%ld\n", f1);
+		printf("%d\n", f1);
 	}
 	else if (n == 2)
 	{
-		printf("%ld, %ld\n", f1, f2);
+		printf("%d, %d\n", f1, f2);
 	}
 	else if (n > 2)
 	{
-		printf("%ld, %ld, ", f1, f2);
+		printf("%d, %d, ", f1, f2);
 		for (i = 3; i <= n; ++i)
 		{
-			printf("%ld", next);
+			printf("%d", next);
 
 			f1 = f2;
 			f2 = next;
