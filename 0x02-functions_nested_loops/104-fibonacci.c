@@ -7,28 +7,47 @@
  */
 int main(void)
 {
-	int i = 2;
+	fibonacci_seq(98);
 
-	for (; i < 100; i++)
-	{
-		printf("%d", fibonacci(i));
-		if (i == 99)
-			continue;
-		printf(", ");
-	}
-	putchar('\n');
+	return (0);
 }
 
 /**
- * fibonacci - Prints fibonacci number specified
+ * fibonacci_seq - Prints fibonacci sequence for integer specified
  * @n: Integer specifying fibonacci position to print
  *
- * Return: Integer
+ * Return: void
  */
-int fibonacci(int n)
+void fibonacci_seq(int n)
 {
-	if (n < 2)
-		return (n);
-	else
-		return (fibonacci(n - 1) + fibonacci(n - 2));
+	long int f1 = 1;
+	long int f2 = 2;
+	long int next = f1 + f2;
+	int i;
+
+	if (n == 1)
+	{
+		printf("%ld\n", f1);
+	}
+	else if (n == 2)
+	{
+		printf("%ld, %ld\n", f1, f2);
+	}
+	else if (n > 2)
+	{
+		printf("%ld, %ld, ", f1, f2);
+		for (i = 3; i <= n; ++i)
+		{
+			printf("%ld", next);
+
+			f1 = f2;
+			f2 = next;
+			next = f1 + f2;
+
+			if (i == n)
+				continue;
+			printf(", ");
+		}
+		printf("\n");
+	}
 }
