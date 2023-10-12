@@ -9,12 +9,17 @@
 void print_diagonal(int n)
 {
 	int i;
+	int j;
 
 	if (n > 0)
 	{
 		for (i = 0; i < n; i++)
 		{
-			_putchar('_');
+			for(j = 0; j < n; j++)
+			{
+				_putchar(48);
+			}
+			_putchar()
 		}
 		_putchar('\n');
 	}
