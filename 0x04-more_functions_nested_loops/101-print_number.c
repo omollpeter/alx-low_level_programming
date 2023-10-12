@@ -14,32 +14,35 @@ void print_number(int n)
 		_putchar('-');
 	}
 
-	if (n < 10)
-		_putchar(n % 10 + '0');
-	else if (n >= 10 && n < 100)
-	{
-		_putchar(n / 10 + '0');
-		_putchar(n % 10 + '0');
-	}
-	else if (n >= 100 && n < 1000)
-	{
+	if (n >= 100 && n < 1000)
 		_putchar(n / 100 + '0');
-		_putchar((n % 100) / 10  + '0');
-		_putchar(n % 10 + '0');
-	}
 	else if (n >= 1000 && n < 10000)
 	{
 		_putchar(n / 1000 + '0');
 		_putchar((n % 1000) / 100 + '0');
-		_putchar((n % 100) / 10 + '0');
-		_putchar(n % 10 + '0');
 	}
 	else if (n >= 10000 && n < 100000)
 	{
 		_putchar(n / 10000 + '0');
 		_putchar((n % 10000) / 1000 + '0');
 		_putchar((n % 1000) / 100 + '0');
-		_putchar((n % 100) / 10 + '0');
-		_putchar(n % 10 + '0');
 	}
+	else if (n >= 100000 && n < 1000000)
+	{
+		_putchar(n / 100000 + '0');
+		_putchar((n % 100000) / 10000 + '0');
+		_putchar((n % 10000) / 1000 + '0');
+		_putchar((n % 1000) / 100 + '0');
+	}
+	else if (n >= 1000000)
+	{
+		_putchar(n / 1000000 + '0');
+		_putchar((n % 1000000) / 100000 + '0');
+		_putchar((n % 100000) / 10000 + '0');
+		_putchar((n % 10000) / 1000 + '0');
+		_putchar((n % 1000) / 100 + '0');
+	}
+	if (n >= 10)
+		putchar((n % 100) / 10  + '0');
+	_putchar(n % 10 + '0');
 }
