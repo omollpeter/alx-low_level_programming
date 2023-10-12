@@ -10,7 +10,7 @@ int main(void)
 	int i = 2;
 	int sum = 0;
 
-	while (fibonacci(i) < 4000000)
+	while (fibonacci(i) <= 4000000)
 	{
 		if (fibonacci(i) % 2 == 0)
 			sum += fibonacci(i);

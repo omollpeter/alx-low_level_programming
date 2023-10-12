@@ -9,10 +9,10 @@ int main(void)
 {
 	int i = 2;
 
-	for (; i < 52; i++)
+	for (; i < 7; i++)
 	{
 		printf("%d", fibonacci(i));
-		if (i == 51)
+		if (i == 6)
 			continue;
 		printf(", ");
 	}
