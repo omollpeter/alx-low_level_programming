@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_line - Prints line using underscores
- * @n: Number of underscores to use
+ * print_diagonal - Prints diagonal line using backslash
+ * @n: Number of backslash to use
  *
  * Return: void
  */
-void print_line(int n)
+void print_diagonal(int n)
 {
 	int i;
 
