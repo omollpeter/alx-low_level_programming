@@ -20,6 +20,6 @@
 	void print_to_98(int n);
 	void print_times_table(int n);
 	void fibonacci_seq(int n);
-	int fibonacci(int);
+	long int fibonacci(int);
 
 #endif

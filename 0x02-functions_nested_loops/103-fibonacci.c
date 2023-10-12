@@ -8,17 +8,15 @@
 int main(void)
 {
 	int i = 1;
-	int sum = 0;
+	long int sum = 0;
 
-	while (1)
+	while (fibonacci(i) < 4000000)
 	{
-		if (fibonacci(i) > 4000000)
-			break;
-		sum += fibonacci(i);
+		if (fibonacci(i) % 2 == 0)
+			sum += fibonacci(i);
 		i++;
 	}
-	printf("%d\n", sum);
-	printf("%d\n", fibonacci(1));
+	printf("%ld\n", sum);
 
 	return (0);
 }
@@ -29,18 +27,18 @@ int main(void)
  *
  * Return: Integer
  */
-int fibonacci(int n)
+long int fibonacci(int n)
 {
-	int f1 = 1;
-	int f2 = 2;
-	int next = f1 + f2;
+	long int f1 = 1;
+	long int f2 = 2;
+	long int next = f1 + f2;
 	int i;
-	int fib;
+	long int fib;
 
 	if (n == 1)
 	{
 		fib = f1;
-	}	
+	}
 	else if (n == 2)
 	{
 		fib = f2;
@@ -50,12 +48,12 @@ int fibonacci(int n)
 		for (i = 3; i <= n; i++)
 		{
 			fib = next;
-		
+
 			f1 = f2;
 			f2 = next;
 			next = f1 + f2;
 		}
 	}
 
-	return (fib);
+	return ((int) fib);
 }
