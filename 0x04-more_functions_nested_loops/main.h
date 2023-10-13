@@ -18,5 +18,6 @@
 	void print_square(int size);
 	long int max_prime(long int n);
 	void print_number(int n);
+	void print_triangle(int size);
 
 #endif
