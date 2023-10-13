@@ -18,6 +18,8 @@ void print_triangle(int size)
 		{
 			for (j = i; j > 0; j--)
 			{
+				if (j == 1)
+					continue;
 				_putchar(' ');
 			}
 
