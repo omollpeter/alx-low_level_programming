@@ -3,6 +3,7 @@
 
 	#include <stdio.h>
 	#include <unistd.h>
+	#include <string.h>
 
 	/* Function prototypes */
 	int _putchar(char c);
@@ -10,5 +11,6 @@
 	void swap_int(int *a, int *b);
 	int _strlen(char *s);
 	void _puts(char *str);
+	void print_rev(char *s);
 
 #endif /* MAIN_H */
