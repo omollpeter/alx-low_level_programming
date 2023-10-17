@@ -26,7 +26,7 @@ int _atoi(char *s)
 		{
 			number = number * 10 + (s[i] - '0');
 
-			if (!*(s + j) >= 48 && !*(s + j) < 58)
+			if (!(*(s + j) >= 48 && *(s + j) < 58))
 				break;
 		}
 	}
