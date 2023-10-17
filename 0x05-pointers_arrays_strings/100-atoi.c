@@ -20,6 +20,8 @@ int _atoi(char *s)
 
 	for (i = 0; *(s + i) != '\0'; i++)
 	{
+		int j = i + 1;
+
 		if (*(s + i) >= 48 && *(s + i) < 58)
 		{
 			number = number * 10 + (s[i] - '0');
