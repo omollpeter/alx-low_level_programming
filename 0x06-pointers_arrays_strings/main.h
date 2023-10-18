@@ -7,5 +7,6 @@
 
 	/* Function prototypes */
 	int _putchar(char c);
+	void reverse_array(int *a, int n);
 
 #endif /* MAIN_H */
