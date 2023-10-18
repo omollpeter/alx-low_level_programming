@@ -1,1 +1,1 @@
-#### This archive contains projects about debugging.
+#### This archive contains projects about pointers, arrays and strings.
