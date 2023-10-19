@@ -4,6 +4,7 @@
 	#include <stdio.h>
 	#include <unistd.h>
 	#include <string.h>
+	#include <limits.h>
 
 	/* Function prototypes */
 	int _putchar(char c);
@@ -14,5 +15,6 @@
 	char *cap_string(char *);
 	int _strcmp(char *s1, char *s2);
 	char *_strncpy(char *dest, char *src, int n);
+	void print_number(int n);
 
 #endif /* MAIN_H */
