@@ -11,19 +11,17 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int len1 = (int) strlen(n1);
-	int len2 = (int) strlen(n2);
-	int i;
-	int j;
-	int k = 0;
-	int carryover = 0;
+	int len1 = 0, len2 = 0, lenr = 0, i = 0, j = 0, k = 0, carryover = 0;
 
+	while (n1[i++])
+		len1++;
+	while (n2[j++])
+		len2++;
 	if (size_r <= len1 + 1 || size_r <= len2 + 1)
 		return (0);
 
 	i = len1 - 1;
 	j = len2 - 1;
-
 	while (i >= 0 || j >= 0 || carryover)
 	{
 		int val1 = (i >= 0) ? n1[i] - '0' : 0;
@@ -39,8 +37,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	r[k] = '\0';
 
-	int lenr = (int) strlen(r);
-
+	i = 0;
+	while (r[i++])
+		lenr++;
 	for (i = lenr; i >= lenr / 2; i--)
 	{
 		char temp;
