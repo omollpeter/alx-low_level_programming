@@ -29,30 +29,22 @@ void print_buffer(char *b, int size)
 				if (j % 10 == 0)
 					break;
 			}
-			putchar('\n');
+			printf("\n%08x: ", i);
 		}
-		if (i % 10 == 0)
-			printf("%08x: ", i);
 	}
 	rem = size - j;
 	if (rem % 2 == 0)
 	{
 		printf("%*s", 25 - ((rem / 2 * 4) + (rem / 2)), " ");
-		while (j < size)
-		{
+		for (; j < size; j++)
 			printf("%c", (b[j] >= 0 && b[j] < 32) ? '.' : b[j]);
-			j++;
-		}
 	}
 	else
 	{
 		rem = rem / 2;
 		printf("%*s", 25 - ((rem * 4) + rem + 2), " ");
-		while (j < size)
-		{
+		for (; j < size; j++)
 			printf("%c", (b[j] >= 0 && b[j] < 32) ? '.' : b[j]);
-			j++;
-		}
 	}
 	putchar('\n');
 }
