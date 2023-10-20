@@ -10,7 +10,7 @@
 void print_buffer(char *b, int size)
 {
 	int i;
-	int j;
+	int j = 0;
 	int rem;
 
 	for (i = 1; i <= size; i++)
@@ -38,15 +38,21 @@ void print_buffer(char *b, int size)
 	if (rem % 2 == 0)
 	{
 		printf("%*s", 25 - ((rem / 2 * 4) + (rem / 2)), " ");
-		while (j++ < size)
+		while (j < size)
+		{
 			printf("%c", (b[j] >= 0 && b[j] < 32) ? '.' : b[j]);
+			j++;
+		}
 	}
 	else
 	{
 		rem = rem / 2;
 		printf("%*s", 25 - ((rem * 4) + rem + 2), " ");
-		while (j++ < size)
+		while (j < size)
+		{
 			printf("%c", (b[j] >= 0 && b[j] < 32) ? '.' : b[j]);
+			j++;
+		}
 	}
 	putchar('\n');
 }
