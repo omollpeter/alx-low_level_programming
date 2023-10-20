@@ -31,6 +31,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		int sum = val1 + val2 + carryover;
 
 		r[k++] = sum % 10 + '0';
+		carryover = sum / 10;
 		if (i >= 0)
 			i--;
 		if (j >= 0)
