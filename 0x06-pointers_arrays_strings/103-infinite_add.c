@@ -11,8 +11,8 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int len1 = strlen(n1);
-	int len2 = strlen(n2);
+	int len1 = (int) strlen(n1);
+	int len2 = (int) strlen(n2);
 	int i;
 	int j;
 	int k = 0;
@@ -38,7 +38,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	r[k] = '\0';
 
-	int lenr = strlen(r);
+	int lenr = (int) strlen(r);
 
 	for (i = lenr; i >= lenr / 2; i--)
 	{
