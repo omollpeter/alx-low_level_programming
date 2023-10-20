@@ -18,5 +18,6 @@
 	void print_number(int n);
 	char *leet(char *);
 	char *rot13(char *);
+	void print_buffer(char *b, int size);
 
 #endif /* MAIN_H */
