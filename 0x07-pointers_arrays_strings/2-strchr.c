@@ -10,15 +10,20 @@
 char *_strchr(char *s, char c)
 {
 	char *pc = NULL;
-	unsigned long i;
+	int i = 0;
+	int len = 0;
 
-	for (i = 0; i < sizeof(s) / sizeof(s[0]); i++)
+	while (s[i++])
+		len++;
+
+	for (i = 0; i < len; i++)
 	{
 		if (s[i] == c)
 		{
 			pc = &s[i];
 			break;
 		}
+	}
 
 	return (pc);
 }
