@@ -14,5 +14,6 @@
 	char *_strchr(char *s, char c);
 	void print_chessboard(char (*a)[8]);
 	unsigned int _strspn(char *s, char *accept);
+	void set_string(char **s, char *to);
 
 #endif /* MAIN_H */
