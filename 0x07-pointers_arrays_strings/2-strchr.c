@@ -10,7 +10,7 @@
 char *_strchr(char *s, char c)
 {
 	char *pc = NULL;
-	int i;
+	unsigned long i;
 
 	for (i = 0; i < sizeof(s) / sizeof(s[0]); i++)
 	{
