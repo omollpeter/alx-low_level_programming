@@ -25,5 +25,7 @@ char *_strchr(char *s, char c)
 		}
 	}
 
+	if (pc == NULL)
+		return (NULL);
 	return (pc);
 }
