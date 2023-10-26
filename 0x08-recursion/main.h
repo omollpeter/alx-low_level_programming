@@ -22,5 +22,6 @@
 	bool check_prime(int n, int i);
 	int _sqrt_recursion(int n);
 	int sq_rt(int n, int i);
+	int wildcmp(char *s1, char *s2);
 
 #endif /* MAIN_H */
