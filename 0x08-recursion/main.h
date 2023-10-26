@@ -20,5 +20,7 @@
 	int is_palindrome(char *s);
 	int is_prime_number(int n);
 	bool check_prime(int n, int i);
+	int _sqrt_recursion(int n);
+	int sq_rt(int n, int i);
 
 #endif /* MAIN_H */
