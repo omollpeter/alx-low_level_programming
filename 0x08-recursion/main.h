@@ -7,6 +7,7 @@
 	#include <limits.h>
 	#include <stddef.h>
 	#include <stdlib.h>
+	#include <stdbool.h>
 
 	/* Function prototypes */
 	int _putchar(char c);
@@ -15,5 +16,7 @@
 	int factorial(int n);
 	int _pow_recursion(int x, int y);
 	void _print_rev_recursion(char *s);
+	bool is_pali(char *s, int start, int end);
+	int is_palindrome(char *s);
 
 #endif /* MAIN_H */
