@@ -18,5 +18,7 @@
 	void _print_rev_recursion(char *s);
 	bool is_pali(char *s, int start, int end);
 	int is_palindrome(char *s);
+	int is_prime_number(int n);
+	bool check_prime(int n, int i);
 
 #endif /* MAIN_H */
