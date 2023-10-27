@@ -1,1 +1,1 @@
-#### This archive contains projects on Static Libraries.
+#### This archive contains projects about alternative version of main; argc, argv.
