@@ -5,7 +5,7 @@
  * @argc: Number of arguments passed
  * @argv: Arguments passed
  *
- * Return: 0 (Success)
+ * Return: 0 if 2 integer arguments passed, 1 otherwise
  */
 int main(int argc, char *argv[])
 {
