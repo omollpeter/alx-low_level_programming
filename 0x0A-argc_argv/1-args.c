@@ -7,8 +7,10 @@
  *
  * Return: 0 (Success)
  */
-int main(int __attribute__((unused)) argc, char __attribute__((unused)) *argv[])
+int main(int __attribute__((unused)) argc, char *argv[])
 {
+	(void) argv;
+
 	printf("%d\n", argc - 1);
 
 	return (0);
