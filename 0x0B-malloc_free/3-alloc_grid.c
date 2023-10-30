@@ -18,6 +18,7 @@ int **alloc_grid(int width, int height)
 	g = malloc(height * sizeof(int *));
 	if (!g)
 	{
+		free(g);
 		printf("Memory allocation failed\n");
 		return (NULL);
 	}
@@ -29,8 +30,8 @@ int **alloc_grid(int width, int height)
 	{
 		if (!g[i])
 		{
+			free(g[i]);
 			printf("Memory allocation failed for each row\n");
-			free(g);
 			return (NULL);
 		}
 	}
