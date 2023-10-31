@@ -12,6 +12,9 @@ char **strtow(char *str)
 	unsigned int len, wc;
 	int i = 0, j;
 
+	if (!str)
+		return (NULL);
+
 	len = strlen(str);
 	str_copy = malloc(len + 1);
 	if (!str_copy)
@@ -22,6 +25,8 @@ char **strtow(char *str)
 	str_tokens = malloc((wc + 1) * sizeof(char *));
 
 	token = strtok(str_copy, " \t");
+	if (token == NULL)
+		str_tokens = NULL;
 	while (token != NULL)
 	{
 		str_tokens[i] = malloc(strlen(token) + 1);
