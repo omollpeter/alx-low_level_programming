@@ -24,7 +24,7 @@ char **strtow(char *str)
 	strcpy(str_copy, str);
 
 	wc = wordcount(str_copy);
-	str_tokens = malloc((wc + 1) * sizeof(char *));
+	str_tokens = malloc((wc) * sizeof(char *));
 
 	token = strtok(str_copy, " \t");
 	if (token == NULL)
