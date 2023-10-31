@@ -10,10 +10,12 @@ char **strtow(char *str)
 {
 	char *str_copy, *token, **str_tokens;
 	unsigned int len, wc;
-	int i = 0, j;
+	int i = 0;
 
-	if (!str)
+	if (!str || strlen(str) == 0)
+	{
 		return (NULL);
+	}
 
 	len = strlen(str);
 	str_copy = malloc(len + 1);
@@ -26,21 +28,12 @@ char **strtow(char *str)
 
 	token = strtok(str_copy, " \t");
 	if (token == NULL)
-		str_tokens = NULL;
+	{
+		return (NULL);
+	}
 	while (token != NULL)
 	{
 		str_tokens[i] = malloc(strlen(token) + 1);
-		if (!str_tokens[i])
-		{
-			if (i == 0)
-				free(str_tokens);
-			if (i > 0)
-			{
-				for (j = i; j >= 0; j--)
-					free(str_tokens[i]);
-				free(str_tokens);
-			}
-		}
 		strcpy(str_tokens[i], token);
 		token = strtok(NULL, " \t");
 		i++;
