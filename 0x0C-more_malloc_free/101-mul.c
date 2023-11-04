@@ -56,7 +56,7 @@ void run_bc(char *s1, char *s2)
 {
 	FILE *fprocess;
 	char *buffer;
-	unsigned int buffer_size, len1, len2;
+	unsigned int buffer_size, len1, len2, i;
 
 	len1 = strlen(s1);
 	len2 = strlen(s2);
@@ -80,7 +80,10 @@ void run_bc(char *s1, char *s2)
 	fflush(fprocess);
 
 	while (fgets(buffer, buffer_size, fprocess) != NULL)
-		printf("%s\n", buffer);
+	{
+		for (i = 0; buffer[i]; i++)
+			_putchar(buffer[i]);
+	}
 
 	free(buffer);
 	pclose(fprocess);
