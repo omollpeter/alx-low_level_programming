@@ -3,7 +3,7 @@ testfile.c
 a.out
 0-main.c
 _putchar.c
-2-main.c
+02-main.c
 3-main.c
 100-main.c
 8-main.c
@@ -17,3 +17,5 @@ s
 101-main.c
 strtow
 b
+c
+cc
