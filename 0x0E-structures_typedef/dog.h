@@ -12,12 +12,12 @@
  *
  * Description: Declaration contains elems of a dog like name, age & owner
  */
-struct dog
+typedef struct dog
 {
 	char *name;
 	float age;
 	char *owner;
-};
+} dog_t;
 
 /* Function prototypes */
 void init_dog(struct dog *d, char *name, float age, char *owner);
