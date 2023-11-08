@@ -19,9 +19,9 @@ int main(int argc, char *argv[])
 	}
 
 	num1 = atoi(argv[1]);
-	if (name < 0)
+	if (num1 < 0)
 	{
-		printd("Errow\n");
+		printf("Errow\n");
 		exit(2);
 	}
 	return (0);
