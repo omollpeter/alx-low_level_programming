@@ -20,7 +20,7 @@ int (*get_op_func(char *s))(int, int)
 	int i;
 
 	i = 0;
-	while ((ops[i].op != NULL && ops[i].f != NULL) || s == NULL)
+	while ((ops[i].op != NULL && ops[i].f != NULL) || strlen(s) > 1)
 	{
 		if (s[0] == ops[i].op[0])
 		{
