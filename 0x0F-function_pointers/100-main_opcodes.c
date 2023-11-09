@@ -10,7 +10,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int num1;
+	int bytes, i;
+	char *array_codes;
 
 	if (argc < 2 || argc > 2)
 	{
@@ -18,11 +19,22 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	num1 = atoi(argv[1]);
-	if (num1 < 0)
+	bytes = atoi(argv[1]);
+	if (bytes < 0)
 	{
-		printf("Errow\n");
+		printf("Error\n");
 		exit(2);
+	}
+
+	array_codes = (char *) main;
+	for (i = 0; i < bytes; i++)
+	{
+		if (i = bytes - 1)
+		{
+			printf("%02x\n", array_codes[i]);
+			continue;
+		}
+		printf("%02x ", array_codes[i]);
 	}
 	return (0);
 }
