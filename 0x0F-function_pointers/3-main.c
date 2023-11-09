@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	}
 
 	ptrop = get_op_func(argv[2]);
-	if (ptrop == NULL)
+	if (ptrop == NULL || strlen(argv[2]) > 1)
 	{
 		printf("Error\n");
 		exit(99);
