@@ -29,12 +29,12 @@ int main(int argc, char *argv[])
 	array_codes = (char *) main;
 	for (i = 0; i < bytes; i++)
 	{
-		if (i = bytes - 1)
+		if (i == bytes - 1)
 		{
-			printf("%02x\n", array_codes[i]);
+			printf("%02hhx\n", array_codes[i]);
 			continue;
 		}
-		printf("%02x ", array_codes[i]);
+		printf("%02hhx ", array_codes[i]);
 	}
 	return (0);
 }
