@@ -8,10 +8,14 @@
  */
 size_t print_list(const list_t *h)
 {
-	list_t *pcur = malloc(sizeof(list_t));
+	list_t *pcur;
 	size_t count = 0;
 	unsigned int len;
 	char *str;
+
+	pcur = malloc(sizeof(list_t));
+	if (!pcur)
+		return (0);
 
 	pcur = (list_t *)h;
 	while (1)
