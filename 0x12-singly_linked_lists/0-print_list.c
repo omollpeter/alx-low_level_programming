@@ -13,6 +13,9 @@ size_t print_list(const list_t *h)
 	unsigned int len;
 	char *str;
 
+	if (!h)
+		return (0);
+
 	pcur = malloc(sizeof(list_t));
 	if (!pcur)
 		return (0);
