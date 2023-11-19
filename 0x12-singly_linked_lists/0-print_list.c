@@ -16,10 +16,6 @@ size_t print_list(const list_t *h)
 	if (!h)
 		return (0);
 
-	pcur = malloc(sizeof(list_t));
-	if (!pcur)
-		return (0);
-
 	pcur = (list_t *)h;
 	while (1)
 	{
@@ -32,6 +28,5 @@ size_t print_list(const list_t *h)
 			break;
 	}
 
-	free(pcur);
 	return (count);
 }

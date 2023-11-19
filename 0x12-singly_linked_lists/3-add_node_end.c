@@ -27,9 +27,6 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	else
 	{
-		pcur = malloc(sizeof(list_t));
-		if (!pcur)
-			return (NULL);
 		pcur = *head;
 		while (pcur->next != NULL)
 		{
