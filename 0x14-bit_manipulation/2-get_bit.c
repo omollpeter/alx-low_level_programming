@@ -9,59 +9,23 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long num;
-	unsigned int j = 0;
-	int bits[32], i = 0;
+	unsigned int i = 0;
+	char *bits;
+	char *zeros = "00000000000000000000000000000000";
 
-	if (n == 0)
-	{
-		bits[j] = 0;
-	}
-	else
-	{
-		while (1)
-		{
-			num = calc_power(2, (unsigned long) i);
-			if (num == n)
-				break;
-			if (num > n)
-			{
-				i = i - 1;
-				break;
-			}
-			i++;
-		}
-		while (i >= 0)
-		{
-			if (calc_power(2, (unsigned long) i) <= n)
-			{
-				bits[j] = 1;
-				n -= calc_power(2, (unsigned long) i);
-			}
-			else
-				bits[j] = 0;
-			i--;
-			j++;
-		}
-	}
-
-	j--;
-	if (index > j)
+	bits = malloc(sizeof(char) * 33);
+	if (!bits)
 		return (-1);
-	return (bits[j - index]);
-}
 
-/**
- * calc_power - Computes power problems
- * @base: Base number
- * @power: Index/power
- *
- * Return: Computed value
- */
-unsigned long calc_power(unsigned long base, unsigned long power)
-{
-	if (power == 0)
-		return (1);
-	else
-		return (base * calc_power(base, power - 1));
+	strcpy(bits, zeros);
+	if (index > 32)
+		return (-1);
+
+	while (n > 0)
+	{
+		bits[i] = n % 2 + '0';
+		n /= 2;
+		i++;
+	}
+	return (bits[index] - '0');
 }
