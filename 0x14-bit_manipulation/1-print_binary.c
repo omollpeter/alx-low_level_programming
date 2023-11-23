@@ -16,11 +16,6 @@ void print_binary(unsigned long n)
 		_putchar(48);
 		return;
 	}
-	if (n == 1)
-	{
-		_putchar(49);
-		return;
-	}
 
 	while (1)
 	{
