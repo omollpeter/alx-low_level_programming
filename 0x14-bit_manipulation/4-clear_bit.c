@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * set_bit - Sets specific bit to 0 at the given index in the binary rep.
+ * clear_bit - Sets specific bit to 0 at the given index in the binary rep.
  * @n: pointer to the decimal number(base-10)
  * @index: Position of the bit to set in the binary
  *
