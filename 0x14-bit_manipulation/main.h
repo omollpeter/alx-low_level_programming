@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -16,5 +17,7 @@ int clear_bit(unsigned long int *n, unsigned int index);
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
 int get_endianness(void);
 int calc_pow(int base, int power);
+int _putchar(char c);
+unsigned long int calc_power(unsigned long int base, unsigned long int power);
 
 #endif /* MAIN_H */
