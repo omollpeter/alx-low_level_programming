@@ -20,5 +20,6 @@ int calc_pow(int base, int power);
 int _putchar(char c);
 unsigned long int calc_power(unsigned long int base, unsigned long int power);
 unsigned long int binary_to_uintl(const char *b);
+char *create_bin(unsigned long int n);
 
 #endif /* MAIN_H */
