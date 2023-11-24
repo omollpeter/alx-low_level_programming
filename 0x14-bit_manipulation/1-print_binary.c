@@ -1,58 +1,32 @@
 #include "main.h"
 
 /**
- * print_binary - Prlongs binary representation of a decimal number
+ * print_binary - Prints binary representation of a decimal number
  * @n: Decimal number(base-10)
  *
  * Return: void
  */
 void print_binary(unsigned long n)
 {
-	unsigned long num;
 	long i = 0;
+	char *bits, *zeros = "00000000000000000000000000000000";
 
-	if (n == 0)
+	bits = malloc(sizeof(char) * 65);
+	if (!bits)
 	{
-		_putchar(48);
 		return;
 	}
 
-	while (1)
-	{
-		num = calc_power(2, (unsigned long) i);
-		if (num == n)
-			break;
-		if (num > n)
-		{
-			i = i - 1;
-			break;
-		}
-		i++;
-	}
-	while (i >= 0)
-	{
-		if (calc_power(2, (unsigned long) i) <= n)
-		{
-			_putchar(49);
-			n -= calc_power(2, (unsigned long) i);
-		}
-		else
-			_putchar(48);
-		i--;
-	}
-}
+	strcpy(bits, zeros);
+	strcat(bits, zeros);
 
-/**
- * calc_power - Computes power problems
- * @base: Base number
- * @power: Index/power
- *
- * Return: Computed value
- */
-unsigned long calc_power(unsigned long base, unsigned long power)
-{
-	if (power == 0)
-		return (1);
-	else
-		return (base * calc_power(base, power - 1));
+	for (; n > 0; i++)
+	{
+		bits[i] = (n & 1) + '0';
+		n = n >> 1;
+	}
+	if (i > 0)
+		i--;
+	for (; i >= 0; i--)
+		putchar(bits[i]);
 }
