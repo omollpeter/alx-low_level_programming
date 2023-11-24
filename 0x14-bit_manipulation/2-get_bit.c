@@ -13,12 +13,13 @@ int get_bit(unsigned long int n, unsigned int index)
 	char *bits;
 	char *zeros = "00000000000000000000000000000000";
 
-	bits = malloc(sizeof(char) * 33);
+	bits = malloc(sizeof(char) * 65);
 	if (!bits)
 		return (-1);
 
 	strcpy(bits, zeros);
-	if (index > 32)
+	strcat(bits, zeros);
+	if (index > 64)
 		return (-1);
 
 	while (n > 0)
