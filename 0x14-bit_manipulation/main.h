@@ -7,6 +7,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include <limits.h>
 
 /* Function prototypes */
 unsigned int binary_to_uint(const char *b);
