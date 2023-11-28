@@ -28,7 +28,6 @@ int main(int argc, char *argv[])
 		fd2 = open(argv[2], O_WRONLY | O_CREAT, 0664);
 	else
 		fd2 = open(argv[2], O_WRONLY | O_TRUNC);
-
 	result = copy_file(fd1, fd2);
 	if (result == -1)
 	{
