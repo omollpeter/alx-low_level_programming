@@ -26,7 +26,8 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content == NULL)
 	{
-		fclose(fp);
+		if (fp)
+			fclose(fp);
 		close(fd);
 		return (1);
 	}
@@ -35,7 +36,8 @@ int create_file(const char *filename, char *text_content)
 	if (count == -1)
 		return (-1);
 
-	fclose(fp);
+	if (fp)
+		fclose(fp);
 	close(fd);
 	return (1);
 }

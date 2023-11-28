@@ -35,7 +35,8 @@ int main(int argc, char *argv[])
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	fclose(fp);
+	if (fp)
+		fclose(fp);
 	cfd1 = close(fd1);
 	if (cfd1 == -1)
 	{
