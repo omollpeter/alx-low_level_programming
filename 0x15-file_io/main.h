@@ -8,6 +8,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include <elf.h>
 
 /* Function prototypes */
 int _putchar(char c);
