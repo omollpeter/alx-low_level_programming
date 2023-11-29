@@ -16,5 +16,10 @@ int create_file(const char *filename, char *text_content);
 int append_text_to_file(const char *filename, char *text_content);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 int copy_file(int fd1, int fd2);
+void print_magic(unsigned char *e_ident);
+void print_class(unsigned char *e_ident);
+void print_data(unsigned char *e_ident);
+void print_version(unsigned char *e_ident);
+void print_osabi(unsigned char *e_ident);
 
 #endif /* MAIN_H */
