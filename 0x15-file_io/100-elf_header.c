@@ -30,7 +30,11 @@ int main(int argc, char *argv[])
     print_data(ehdr.e_ident);
     print_version(ehdr.e_ident);
     print_osabi(ehdr.e_ident);
+	print_abi_version(ehdr.e_ident);
+	print_type(ehdr.e_type);
+	print_entry_addr(ehdr.e_entry);
 
+	fclose(fp);
     return (0);
 }
 
@@ -46,7 +50,6 @@ int check_elf_file(Elf64_Ehdr *hdr)
     {
         return (-1);
     }
-    printf("This is elf file\n");
     return (1);
 }
 
@@ -87,6 +90,18 @@ void print_class(unsigned char *e_ident)
         printf("Unknown class\n");
         break;
     }
+}
+
+void print_entry_addr(Elf64_Addr e_entry)
+{
+    printf("  Entry point address:                ");
+    printf("%#lx\n", e_entry);
+}
+
+void print_abi_version(unsigned char *e_ident)
+{
+    printf("  ABI Version:                        ");
+    printf("%u\n", e_ident[EI_ABIVERSION]);
 }
 
 void print_osabi(unsigned char *e_ident)
@@ -163,6 +178,32 @@ void print_version(unsigned char *e_ident)
         break;
     default:
         printf("Unknown version\n");
+        break;
+    }
+}
+
+void print_type(unsigned short e_type)
+{
+    printf("  Type:                               ");
+    switch (e_type)
+    {
+    case ET_NONE:
+        printf("Unknown type\n");
+        break;
+    case ET_REL:
+        printf("REL (Relocatable File)\n");
+        break;
+    case ET_EXEC:
+        printf("EXEC (Executable file)\n");
+        break;
+    case ET_DYN:
+        printf("DYN (Shared object file)\n");
+        break;
+    case ET_CORE:
+        printf("Core file\n");
+        break;
+    default:
+        printf("Unknown type\n");
         break;
     }
 }

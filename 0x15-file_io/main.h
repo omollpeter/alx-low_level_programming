@@ -23,5 +23,8 @@ void print_data(unsigned char *e_ident);
 void print_version(unsigned char *e_ident);
 void print_osabi(unsigned char *e_ident);
 int check_elf_file(Elf64_Ehdr *hdr);
+void print_abi_version(unsigned char *e_ident);
+void print_type(unsigned short e_type);
+void print_entry_addr(Elf64_Addr e_entry);
 
 #endif /* MAIN_H */
