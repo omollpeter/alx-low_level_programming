@@ -1,6 +1,11 @@
 #ifndef HASH_TABLES_H
 #define HASH_TABLES_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stddef.h>
+
 /* Structure declarations for hash node and hash table */
 
 /**
