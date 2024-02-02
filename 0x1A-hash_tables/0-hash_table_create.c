@@ -1,5 +1,7 @@
 #include "hash_tables.h"
 
+unsigned long int ht_size = 0;
+
 /**
  * hash_table_create - Creates a hash table
  * @size: Size of the hash table
@@ -12,6 +14,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	hash_node_t *hn;
 	unsigned long int i;
 
+	ht_size = size;
 	ht = malloc(sizeof(hash_table_t));
 	if (!ht)
 	{
