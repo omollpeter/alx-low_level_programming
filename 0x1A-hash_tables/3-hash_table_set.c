@@ -12,8 +12,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *hn, *temp;
 	unsigned long int idx;
-	char *value_cpy;
+	char *value_cpy, key_cpy;
 
+	if (!ht)
+		return (0);
 	if (key == NULL || strlen(key) == 0)
 		return (0);
 
@@ -23,8 +25,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	value_cpy = strdup(value);
+	key_cpy = strdup(key);
 
-	hn->key = (char *) key;
+	hn->key = key_cpy;
 	hn->value = value_cpy;
 	hn->next = NULL;
 	if (ht->array[idx] == NULL)
