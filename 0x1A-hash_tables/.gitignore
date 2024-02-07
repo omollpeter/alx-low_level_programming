@@ -23,4 +23,7 @@ cc
 d
 e
 f
+g
+test*
 test.c
+output/
