@@ -20,123 +20,32 @@ def island_perimeter(grid):
         perimeter (int): Perimeter of the island
     """
 
-    if type(grid) is not list:
+    if not isinstance(grid, list):
         raise TypeError("The grid must be a list")
 
     height = len(grid)
     if height > 100:
         raise ValueError("width/height should not exceed 100")
-    width = 0
-    for item in grid:
-        if type(item) is not list:
-            raise TypeError("The grid must be a list of list")
-        else:
-            width = len(item)
-            if width > 100:
-                raise ValueError("width/height should not exceed 100")
-            for i in range(width):
-                if i == 0 or i == width - 1:
-                    if type(item[i]) is not int:
-                        raise TypeError("The grid list shld contain ints")
-                    if item[i] != 0:
-                        raise ValueError("The grid shld be surr. with water")
-                else:
-                    if type(item[i]) is not int:
-                        raise TypeError("The grid list shld contain ints")
-                    if item[i] < 0 or item[i] > 1:
-                        print(item[i])
-                        raise ValueError("The grid shld contain only 0 and 1")
+
     prmtr = 0
-    for i in range(1, height - 1):
-        for j in range(1, width - 1):
-            if i == 1:
-                if grid[i][j] == 1:
-                    bottom = grid[i + 1][j]
-                    left = grid[i][j - 1]
-                    right = grid[i][j + 1]
-                    if left == 1 and bottom == 1 and right == 1:
-                        prmtr += 1
-                    elif left == 0 and bottom == 1 and right == 0:
-                        prmtr += 3
-                    elif left == 1 and bottom == 1 and right == 0:
-                        prmtr += 2
-                    elif left == 0 and bottom == 1 and right == 1:
-                        prmtr += 2
-                    elif left == 1 and bottom == 0 and right == 1:
-                        prmtr += 2
-                    elif left == 0 and bottom == 0 and right == 1:
-                        prmtr += 3
-                    elif left == 1 and bottom == 0 and right == 0:
-                        prmtr += 3
-                    elif left == 0 and bottom == 0 and right == 0:
-                        prmtr += 4
-                        return prmtr
-                    if right == 0:
-                        break
-            elif i == height - 2:
-                if grid[i][j] == 1:
-                    top = grid[i - 1][j]
-                    left = grid[i][j - 1]
-                    right = grid[i][j + 1]
-                    if left == 1 and top == 1 and right == 1:
-                        prmtr += 1
-                    elif left == 0 and top == 1 and right == 0:
-                        prmtr += 3
-                    elif left == 1 and top == 1 and right == 0:
-                        prmtr += 2
-                    elif left == 0 and top == 1 and right == 1:
-                        prmtr += 2
-                    elif left == 1 and top == 0 and right == 1:
-                        prmtr += 2
-                    elif left == 0 and top == 0 and right == 1:
-                        prmtr += 3
-                    elif left == 1 and top == 0 and right == 0:
-                        prmtr += 3
-                    elif left == 0 and top == 0 and right == 0:
-                        prmtr += 4
-                        return prmtr
-                    if right == 0:
-                        break
-            else:
-                if grid[i][j] == 1:
-                    top = grid[i - 1][j]
-                    left = grid[i][j - 1]
-                    right = grid[i][j + 1]
-                    bottom = grid[i - 1][j]
-                    if left == 1 and top == 1 and right == 1 and bottom == 1:
-                        prmtr += 0
-                    elif left == 1 and top == 0 and right == 1 and bottom == 1:
-                        prmtr += 1
-                    elif left == 1 and top == 0 and right == 1 and bottom == 0:
-                        prmtr += 2
-                    elif left == 0 and top == 1 and right == 1 and bottom == 1:
-                        prmtr += 1
-                    elif left == 1 and top == 0 and right == 0 and bottom == 0:
-                        prmtr += 3
-                    elif left == 0 and top == 0 and right == 1 and bottom == 0:
-                        prmtr += 3
-                    elif left == 0 and top == 0 and right == 0 and bottom == 1:
-                        prmtr += 3
-                    elif left == 0 and top == 1 and right == 0 and bottom == 0:
-                        prmtr += 3
-                    elif left == 0 and top == 1 and right == 0 and bottom == 1:
-                        prmtr += 3
-                    elif left == 0 and top == 0 and right == 1 and bottom == 1:
-                        prmtr += 2
-                    elif left == 0 and top == 1 and right == 1 and bottom == 0:
-                        prmtr += 2
-                    elif left == 1 and top == 0 and right == 0 and bottom == 1:
-                        prmtr += 2
-                    elif left == 1 and top == 1 and right == 0 and bottom == 0:
-                        prmtr += 2
-                    elif left == 1 and top == 1 and right == 0 and bottom == 1:
-                        prmtr += 1
-                    elif left == 1 and top == 1 and right == 1 and bottom == 0:
-                        prmtr += 1
-                    elif left == 0 and top == 0 and right == 0 and bottom == 0:
-                        prmtr += 4
-                        return prmtr
-                    if right == 0:
-                        break
+    for i in range(height):
+        if not isinstance(grid[i], list):
+            raise TypeError("The grid must be a list of lists")
+        width = len(grid[i])
+        if width > 100:
+            raise ValueError("width/height should not exceed 100")
+
+        for j in range(width):
+            if not isinstance(grid[i][j], int):
+                raise TypeError("The grid list should contain ints")
+            if grid[i][j] not in {0, 1}:
+                raise ValueError("The grid should contain only 0 and 1")
+
+            if grid[i][j] == 1:
+                prmtr += 4
+                if i > 0 and grid[i - 1][j] == 1:
+                    prmtr -= 2
+                if j > 0 and grid[i][j - 1] == 1:
+                    prmtr -= 2
 
     return prmtr
