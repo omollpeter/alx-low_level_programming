@@ -28,6 +28,7 @@ int bin_search(int *array, size_t size, int value, int left, int right)
 
 	if ((mid == left || mid == right) && array[mid] != value)
 	{
+		printf("Searching in array: %d\n", array[size - 1]);
 		return (-1);
 	}
 
